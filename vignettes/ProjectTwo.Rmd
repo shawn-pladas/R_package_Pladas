@@ -141,7 +141,7 @@ ggplot(data = butterfly_join, mapping = aes(x = AnnualTemp, y = Day)) +
 
 ```{r}
 
-## For day of emergence, spring temperatures appear to have the strongest negative correlation, as temperature increases, day of emergence decreases. Summer and Annual temperatures also have a correlation. Correlations seem to be stronger and more obvious with certain species. When comparing facets and species across the annual temperature various species show a more obvious negative correlation. 
+## For day of emergence, spring temperatures appear to have the strongest negative correlation, as temperature increases, day of emergence decreases. Summer and Annual temperatures also have a correlation. Correlations seem to be stronger and more obvious with certain species. When comparing facets and species across the annual temperature various species appear to have a slightly more obvious negative correlation. 
 
 ```
 
