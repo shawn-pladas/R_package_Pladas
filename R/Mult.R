@@ -8,7 +8,7 @@
 
 mult <- function(x, y){
   product <- x*y
-  is.numeric(product) == FALSE{
+  if (is.numeric(product) == FALSE){
     return("ERROR - non-numeric")
   }
   return(product)
