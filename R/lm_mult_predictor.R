@@ -1,5 +1,5 @@
-#Input: Data frame with predictor columns
-#output: Linear model comparing two predictor columns, numerical and categorical.
+#Input: Data frame with predictor and response columns.
+#output: Linear model comparing two predictor columns, numerical and categorical to response column.
 #
 #' Create a multiple predictor linear model using numerical and categorical data sets
 #' 
@@ -12,7 +12,7 @@
 #' @usage
 #' mult_lm_predictor(df, xcol, ycol, zcol, title)
 
-mult_lm_predictor <- function(df, xcol, ycol, zcol, title, lab_x, lab_y) {
+mult_lm_predictor <- function(df, xcol, ycol, zcol, title) {
   mult_linear_model <- 
     ggplot(data = df, mapping = aes(x = as.numeric(reorder({{xcol}}, {{ycol}})), y = {{ycol}}, color = {{zcol}}), title()) +
     geom_point() +
@@ -29,6 +29,5 @@ mult_lm_predictor <- function(df, xcol, ycol, zcol, title, lab_x, lab_y) {
   return(mult_linear_model)
 }
 
-## lm not showing
-## include ability to add x, y titles labs(x = {{"lab_x"}}, y = {{"lab_y"}})
+
   
