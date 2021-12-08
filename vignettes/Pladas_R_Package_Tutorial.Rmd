@@ -74,7 +74,7 @@ Lastly, ANCOVA create a multiple predictor linear model analysis using numerical
 
 ```{r}
 
-ancova(bats3, "difference", "forearmlength_mm", "sex")
+ancova(bats2, bats2$difference, bats2$forearmlength_mm, bats2$sex)
 
 ```
 
