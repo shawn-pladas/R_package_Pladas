@@ -8,8 +8,7 @@
 #' @param predictor1 A numerical predictor variable
 #' @param predictor2 A categorical predictor variable
 #' @return A linear model test summary with of categorical and numerical predictors
-#' @usage
-#' ancova(df, response, predictor1, predictor2)
+#' @export
 
 ancova <- function(df, response, predictor1, predictor2) {
   ancova_fit <- lm({{response}} ~ {{predictor1}} + {{predictor2}}, data = df)

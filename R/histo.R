@@ -8,8 +8,7 @@
 #' @param y The y-axis data set
 #' @param title The title 
 #' @return Plot of a histogram with x and y values
-#' @usage
-#' histo_plot(x)
+#' @export
 
 histo_plot <- function(df, x, y, title){
   histogram <- 

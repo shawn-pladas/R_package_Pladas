@@ -9,9 +9,7 @@
 #' @param zcol A categorical predictor variable
 #' @param title A title
 #' @return A linear model of categorical and numerical predictors
-#' @usage
-#' mult_lm_predictor(df, xcol, ycol, zcol, title)
-
+#' @export
 mult_lm_predictor <- function(df, xcol, ycol, zcol, title) {
   mult_linear_model <- 
     ggplot(data = df, mapping = aes(x = as.numeric(reorder({{xcol}}, {{ycol}})), y = {{ycol}}, color = {{zcol}}), title()) +

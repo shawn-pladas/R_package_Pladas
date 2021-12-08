@@ -7,8 +7,7 @@
 #' @param xcol A column of high integers
 #' @param ycol A column of low integers
 #' @return A column with the difference
-#' @usage
-#' calc.diff(df, xcol, ycol)
+#' @export
 
 calc_diff <- function(df, xcol, ycol){
   df_plus <- df %>% 

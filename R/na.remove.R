@@ -5,9 +5,7 @@
 #' 
 #' @param x A data frame
 #' @return Data frame with no NA values
-#' @usage
-#' na.remove(x)
-
+#' @export
 na.remove <- function(x){
   product <- x %>% 
     filter(!is.na(x))
