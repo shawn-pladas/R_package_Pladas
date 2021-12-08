@@ -48,23 +48,22 @@ bats1 <- na.remove(bats)
 
 calc_diff takes two columns with numeric values and calculates the difference between them. Useful for if you need to add a column of calculated difference in weights, size, etc. Provides a column within a dataframe of a numeric difference. 
 
-```{r}
-bats1
+```{r eval=FALSE, include=FALSE}
 bats2 <- calc_diff(bats1, mass_bat_bag, mass_bag)
 
 ```
 
 The histo_plot function provides a bar graph of the x and y input data and includes a parameter to add in a title. Useful for quick representation of values within a data set. 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 
-histo_plot(bats2, sex, location, "Sex ratio by location")
+histo_plot(bats1, sex, location, "Sex ratio by location")
 
 ```
 
 lm_mult_predictor creates linear model comparing two predictor columns, numerical and categorical, to response column. Useful for quick representation and visualization of linear models with multiple predictors. Parameters include a data frame, xcol for a numerical predictor, ycol for a response variable, and zcol for a categorical predictor. Also, provides a parameter for including a title. 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 
 mult_lm_predictor(bats2, difference, forearmlength_mm, sex, "Weight and sex as predictors of forearm length")
 
@@ -72,7 +71,7 @@ mult_lm_predictor(bats2, difference, forearmlength_mm, sex, "Weight and sex as p
 
 Lastly, ANCOVA create a multiple predictor linear model analysis using numerical and categorical data. Parameters include a data frame, "response" a response variable, "predictor1" a numerical predictor, "predictor2" a categorical predictor variable. Also, provides a parameter for including a title. Returns linear models tests including T-test, R^2 values, p-values, etc. 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 
 ancova(bats2, bats2$difference, bats2$forearmlength_mm, bats2$sex)
 

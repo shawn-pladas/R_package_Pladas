@@ -95,16 +95,34 @@
 <pre><code><span class="co">## ── <span style="font-weight: bold;">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">## <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span> masks <span style="color: #0000BB;">stats</span>::filter()</span>
 <span class="co">## <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>    masks <span style="color: #0000BB;">stats</span>::lag()</span></code></pre>
-<p>Install Pladas_R_Package</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"shawn-pladas/R_package_Pladas"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></code></pre></div>
+<p>Install Pladas_R_Package</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#devtools::install_github("shawn-pladas/R_package_Pladas")</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">PladasRPackage</span><span class="op">)</span></code></pre></div>
 <p>Download some data for the package:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url <span class="op">=</span> <span class="st">"https://github.com/shawn-pladas/R_package_Pladas/blob/master/data/Bat_Capture_Data.csv"</span>, destfile <span class="op">=</span> <span class="st">"../data/bats.csv"</span><span class="op">)</span></code></pre></div>
 <p>##Working Example</p>
 <p>+An Example of each function and how it works +Say something about why this is a good thing to do +say something about expected output</p>
-<p>pkgdown::build_site</p>
+<p>na.remove removes NA values from your entire data frame across all rows and columns. Useful for a quick and immediate way to eliminate NA values in data. Provides a data frame free of NA values. See example below:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">bats</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv</a></span><span class="op">(</span><span class="st">"../data/bats.csv"</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## <span style="font-weight: bold;">Rows: </span><span style="color: #0000BB;">31080</span> <span style="font-weight: bold;">Columns: </span><span style="color: #0000BB;">1</span></span></code></pre>
+<pre><code><span class="co">## <span style="color: #00BBBB;">──</span> <span style="font-weight: bold;">Column specification</span> <span style="color: #00BBBB;">────────────────────────────────────────────────────────</span></span>
+<span class="co">## <span style="font-weight: bold;">Delimiter:</span> ","</span>
+<span class="co">## <span style="color: #BB0000;">chr</span> (1): &lt;!DOCTYPE html&gt;</span></code></pre>
+<pre><code><span class="co">## </span>
+<span class="co">## <span style="color: #00BBBB;">ℹ</span> Use <span style="color: #262626; background-color: #DADADA;">`spec()`</span> to retrieve the full column specification for this data.</span>
+<span class="co">## <span style="color: #00BBBB;">ℹ</span> Specify the column types or set <span style="color: #262626; background-color: #DADADA;">`show_col_types = FALSE`</span> to quiet this message.</span></code></pre>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">bats1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/na.remove.html">na.remove</a></span><span class="op">(</span><span class="va">bats</span><span class="op">)</span></code></pre></div>
+<pre><code><span class="co">## Warning: One or more parsing issues, see `problems()` for details</span></code></pre>
+<p>calc_diff takes two columns with numeric values and calculates the difference between them. Useful for if you need to add a column of calculated difference in weights, size, etc. Provides a column within a dataframe of a numeric difference.</p>
+<p>The histo_plot function provides a bar graph of the x and y input data and includes a parameter to add in a title. Useful for quick representation of values within a data set.</p>
+<p>lm_mult_predictor creates linear model comparing two predictor columns, numerical and categorical, to response column. Useful for quick representation and visualization of linear models with multiple predictors. Parameters include a data frame, xcol for a numerical predictor, ycol for a response variable, and zcol for a categorical predictor. Also, provides a parameter for including a title.</p>
+<p>Lastly, ANCOVA create a multiple predictor linear model analysis using numerical and categorical data. Parameters include a data frame, “response” a response variable, “predictor1” a numerical predictor, “predictor2” a categorical predictor variable. Also, provides a parameter for including a title. Returns linear models tests including T-test, R^2 values, p-values, etc.</p>
 </div>
   </div>
 

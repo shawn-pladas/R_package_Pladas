@@ -1,6 +1,3 @@
-#Input: two columns with integer numbers
-#output: one column of the calculated difference
-
 #' Add column with the calculated difference between two other columns 
 #' 
 #' @param df A data frame
@@ -10,6 +7,7 @@
 #' @export
 
 calc_diff <- function(df, xcol, ycol){
+  print(df)
   df_plus <- df %>% 
     mutate(difference = ({{xcol}} - {{ycol}}))
   if (is.data.frame(df) == FALSE){
