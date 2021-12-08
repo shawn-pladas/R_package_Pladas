@@ -1,0 +1,83 @@
+---
+title: "Pladas_R_Package"
+author: "Shawn Pladas"
+date: "12/2/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Installation
+
+Load in common libraries used by this package
+
+```{r cars}
+library(ggplot2)
+library(tidyverse)
+```
+
+Install Pladas_R_Package 
+
+```{r eval=FALSE}
+devtools::install_github("shawn-pladas/R_package_Pladas")
+library(PladasRPackage)
+```
+
+Download some data for the package:
+
+```{r}
+download.file(url = "https://github.com/shawn-pladas/R_package_Pladas/blob/master/data/Bat_Capture_Data.csv", destfile = "../data/bats.csv")
+```
+
+##Working Example
+
++An Example of each function and how it works
++Say something about why this is a good thing to do
++say something about expected output
+
+na.remove removes NA values from your entire data frame across all rows and columns. Useful for a quick and immediate way to eliminate NA values in data. Provides a data frame free of NA values. See example below:
+
+```{r}
+
+bats1 <- na.remove(bats)
+
+```
+
+calc_diff takes two columns with numeric values and calculates the difference between them. Useful for if you need to add a column of calculated difference in weights, size, etc. Provides a column within a dataframe of a numeric difference. 
+
+```{r}
+
+bats2 <- calc_diff(bats1, mass_bat_bag, mass_bag)
+
+```
+
+The histo_plot function provides a bar graph of the x and y input data and includes a parameter to add in a title. Useful for quick representation of values within a data set. 
+
+```{r}
+
+histo_plot(bats2, sex, location, "Sex ratio by location")
+
+```
+
+lm_mult_predictor creates linear model comparing two predictor columns, numerical and categorical, to response column. Useful for quick representation and visualization of linear models with multiple predictors. Parameters include a data frame, xcol for a numerical predictor, ycol for a response variable, and zcol for a categorical predictor. Also, provides a parameter for including a title. 
+
+```{r}
+
+mult_lm_predictor(bats2, difference, forearmlength_mm, sex, "Weight and sex as predictors of forearm length")
+
+```
+
+Lastly, ANCOVA create a multiple predictor linear model analysis using numerical and categorical data. Parameters include a data frame, "response" a response variable, "predictor1" a numerical predictor, "predictor2" a categorical predictor variable. Also, provides a parameter for including a title. Returns linear models tests including T-test, R^2 values, p-values, etc. 
+
+```{r}
+
+ancova(bats3, "forearmlength_mm", "difference", "sex")
+
+```
+
+
+pkgdown::build_site
+
+
