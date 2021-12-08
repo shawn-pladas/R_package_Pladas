@@ -1,7 +1,7 @@
 #Input: Data frame with predictor and response columns
-#output: Linear model comparing two predictor columns, numerical and categorical.
+#output: Linear model analysis comparing two predictor columns, numerical and categorical.
 #
-#' Create a multiple predictor linear model using numerical and categorical data sets
+#' Analysis of a multiple predictor linear model using numerical and categorical data sets
 #' 
 #' @param df A data frame
 #' @param response A response variable 

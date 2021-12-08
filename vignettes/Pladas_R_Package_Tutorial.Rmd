@@ -16,6 +16,7 @@ Load in common libraries used by this package
 ```{r cars}
 library(ggplot2)
 library(tidyverse)
+library(dplyr)
 ```
 
 Install Pladas_R_Package 
@@ -73,11 +74,9 @@ Lastly, ANCOVA create a multiple predictor linear model analysis using numerical
 
 ```{r}
 
-ancova(bats3, "forearmlength_mm", "difference", "sex")
+ancova(bats3, "difference", "forearmlength_mm", "sex")
 
 ```
 
-
-pkgdown::build_site
 
 
